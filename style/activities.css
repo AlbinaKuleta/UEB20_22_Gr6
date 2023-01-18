@@ -1,3 +1,168 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header{
+    width: 100%;
+    height: 70px;
+    background: #d4e3f3;
+    position: fixed;
+    z-index: 99;
+}
+
+.navigation{
+    max-width: 100%;
+    padding-right: 20px;
+    margin:0;
+}
+
+.logo{
+    margin: 0;
+    float: left;
+    padding: 5px 0 0 5px;
+
+    
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    padding: 10px;
+}
+
+.navigation-menu{
+    float:right;
+    display:flex;
+    align-items: center;
+    min-height: 70px;
+}
+
+.navigation-menu a{
+    margin-right: 40px;
+    color: blue;
+    text-transform: uppercase;
+    font-size:14px;
+    padding: 10px 0px;
+    border-radius: 4px;
+    transition: .3s linear;
+}
+
+.navigation-menu a:hover{
+    background: #fff;
+    color: blue;
+    transform: scale(0.8);
+}
+
+.navigation-menu i{
+    margin-left: 60px;
+    font-size: 16px;
+}
+
+.home{
+    color:#92ef84;
+
+}
+
+.about{
+    color:#92ef84;
+
+}
+
+.activities{
+    color:#92ef84;
+
+}
+
+.contact{
+    color:#92ef84;
+
+}
+
+.menu-toggle-btn{
+    float: right;
+    height: 90px;
+    line-height: 90px !important;
+    color: #fff;
+    font-size: 26px;
+    display: none !important;
+    cursor: pointer;
+}
+
+.search-box{
+    position: relative;
+    top: 5px;
+    left: 2rem;
+    right: 2rem;
+    background:none;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+.search-box:hover > .search-txt{
+    width: 4rem;
+    padding: 0 6px;
+    top: 50px;
+}
+.search-box:hover > .search-btn{
+   color: white;
+     }
+
+.search-txt{
+ border: none;
+ background: none;
+ outline: none;
+ float: left;
+ padding: 0;
+ color: rgb(66, 61, 139);
+ font-size: 16px;   
+ width: 0px;
+}
+ 
+@media screen and (max-width:760px) {
+    .menu-toggle-btn{
+        display: block !important;
+    }
+
+    .navigation-menu{
+        position:fixed;
+        width: 100%;
+        max-width: 400px;
+        background: #7c9bd1;
+        top:90px;
+        right: 0;
+        display: none;
+        padding: 20px 40px;
+        box-sizing: border-box;
+    }
+
+    .navigation-menu::before{
+        content: "";
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid red;
+        position: absolute;
+        top: -10px;
+        right: 10px;
+
+    }
+
+    .navigation-menu a{
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navigation-menu.active{
+        display: block;
+        position: fixed;
+    }
+
+}
+
 body{
     background-image: url(
     "https://i.pinimg.com/originals/63/65/fb/6365fb5823ca5602292b3d79a9202f11.jpg");
@@ -23,10 +188,12 @@ body{
       
     }
 
-.container2{
+.container3{
     box-sizing: border-box;
     justify-content: center;
-    padding-bottom: 5px;
+
+    margin-bottom: 50px;
+    display: flex;
     
 }
 
@@ -108,7 +275,7 @@ nav ul li a{
 }
 
 .color-container2{
-    background-color: #d4e3f3;
+    background-color: #dfedfb;
     width: 230px;
     height: 200px;
     color-scheme: white;
@@ -124,13 +291,17 @@ nav ul li a{
     box-shadow: 0 4px 8px rgba(0,0,0,.3);
     text-align:center;
 }
-.popup1-btn{
-    width: 500px;
-    height: 50px;
-    color:#5699e0;
-    background-color: #d4e3f3;
-    margin-left: 550px;
 
+table{
+    margin-top: 100px;
+    text-align: center;
+    border: 3px;
+    width: 20cm;
+    height: 5cm;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #5699e0;
+    background-color: #dfedfb;
 }
 img{
     width:18cm;
@@ -147,11 +318,19 @@ img{
 h4{
     font-size: 1.5cm;
     color: #84add9;
-    margin-top: 10px;
+    margin-top: 30px;
+    text-align: center;
 }
 h3{
     font-size: 1cm;
-    margin-top: 10px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+h6{
+    font-size: 1.5cm;
+    color: #84add9;
+    margin-top: 100px;
     text-align: center;
 }
 
@@ -160,7 +339,7 @@ h1{
     font-size: 1.5cm;
     color:rgb(119, 193, 168);
     justify-content: center;
-    
+    letter-spacing: 0.5rem;
 }
 .container4{
     margin: 50px auto;
@@ -177,7 +356,7 @@ h1{
     align-items: center;
     flex-direction: column;
     gap: 15px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .btn .play{
@@ -264,94 +443,34 @@ color: #fff;
 
 
 /* Slideshow container */
-.slideshow-container {
-  margin-top: 50px;
-  justify-content: center;
-  height: 13cm;
-margin-left: 450px;
+
+.maindiv{
+    width: 70%;
+    height: 400px;
+    margin-top: 250px;
+    margin-left: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    background-image: 
+url("https://media.istockphoto.com/id/984878838/photo/a-boy-in-wheelchair-with-teenager-friends-outside-playing-basketball.jpg?s=612x612&w=0&k=20&c=aL2zbVQVFXk6c5gBaEfGBROJUY5Qs_YUop57DMhCbRk=");
+   background-size: 100% 100%;
+   box-shadow: 1px 2px 10px 10px white;
+   animation: slider 10s infinite linear;
 }
-.text{
-    justify-content: center;
+
+@keyframes slider{
+    0%{background-image: 
+url("https://media.istockphoto.com/id/1291655451/photo/sports-friendship.jpg?s=612x612&w=0&k=20&c=xbaZY3ej2H1TdojFoMj0EBQAIODaj3GH4F1JtGljRDg=");}
+   
+    35%{background-image: 
+url("https://img.freepik.com/free-photo/group-friends-taking-stroll-city-s-street-summer-day_155003-15177.jpg?w=2000");}
     
+    75%{background-image: 
+url("https://raisingchildren.net.au/__data/assets/image/0013/108130/Physical-activity-for-children-with-disability-narrow.jpg");}
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  justify-content: center;
-}
-
-/* Position the "next button" to the right */
-.next {
-   right: 0; 
-   border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
- 
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #d4e3f3;
-  font-size: 1cm;
-  padding: 8px 12px;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-.slideshow-container{
-    justify-content: center;
-
-}
-.container2.slideshow-container{
-    margin: 100px;
-}
-
-*{
-    margin:0;
-    padding:0;
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
-}
 
 footer{
     background-color: #f3eee7;

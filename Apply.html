@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply</title> 
+
+    <style> 
+      body {
+         background: white;
+      }
+
+      #canvas {
+         display: none;
+         width: 100%;
+      }
+
+      #snapshotImageElement {
+         position: absolute;
+         left: 10px;
+         margin: 20px;
+         border: thin solid white;
+         margin-left: 37%;
+      }
+   </style>
+
+    <script type = "text/javascript">
+        function validate() {
+        var text;
+  
+        for(let i = 0; i < document.myForm.length; i++){
+           if(document.myForm[i].value==""){
+               text = `${document.myForm[i].name} cannot be empty`;              
+               document.getElementById("demo").innerHTML = text;
+              document.myForm[i].focus() ;
+              return false;
+            }
+         }
+         //   if( document.myForm.name.value == "" ) {        
+         //     text = "Name cannot be empty";
+         //      document.getElementById("demo").innerHTML = text;
+         //      document.myForm.name.focus() ;
+         //      return false;
+         //   }
+         //   if( document.myForm.email.value == "" ) {
+         //     text = "E-mail cannot be empty";
+         //      document.getElementById("demo").innerHTML = text;
+         //      document.myForm.email.focus() ;
+         //      return false;
+         //   }
+      var emailID = document.myForm.email.value;
+      atposn = emailID.indexOf("@");
+      dotposn = emailID.lastIndexOf(".");
+      if (atposn < 1 || ( dotposn - atposn < 2 ) || emailID[emailID.length -1] == '.') {
+      text = "Please enter valid email ID";
+      document.getElementById("demo").innerHTML = text;
+      document.myForm.email.focus() ;
+      return false;
+    }
+  
+  
+   //  document.myForm.phone.value == "" ||
+           if(  isNaN( document.myForm.phone.value ) ||
+              document.myForm.phone.value.length != 9 ) {
+              text = "Please enter a valid 9-digit phone number";
+              document.getElementById("demo").innerHTML = text;
+              document.myForm.phone.focus() ;
+              return false;
+           }
+           if( document.myForm.subject.value == "0" ) {
+              text = "Please select your profession";
+              document.getElementById("demo").innerHTML = text;
+              return false;
+           }
+           alert("You have applied successfully!");
+           return( true );
+        }
+  
+        // function checkEmail(email){
+  
+        // }
+     </script>
+</head>
+<body>
+    <form action = "" name = "myForm" onsubmit = "return(validate());">
+        <h1 align="center">YOU CAN APPLY HERE</h1>
+          <table align="center" cellspacing = "3" cellpadding = "3" border = "3">
+             <tr>
+                <td align = "right">Name</td>
+                <td><input type = "text" name = "name" /></td>
+             </tr>
+             <tr>
+                <td align = "right">E-mail</td>
+                <td><input type = "text" name = "email" /></td>
+             </tr>
+             <tr>
+                <td align = "right">Phone Number</td>
+                <td><input type = "text" name = "phone" /></td>
+             </tr>
+             <tr>
+                <td align = "right">Profession</td>
+                <td>
+                   <select name = "subject">
+                      <option value = "0" selected>Select</option>
+                      <option value = "1">DOCTOR</option>
+                      <option value = "2">NURSE</option>
+                   </select>
+                </td>
+             </tr>
+          </table>
+          <p id="demo" style="color:red; text-align:center"></p>
+    <div style="text-align:center"><input type = "submit" value = "Submit" /></div>
+       </form>
+
+       
+         <img id='snapshotImageElement'/>
+         
+         <canvas id='canvas' width='400' height='400'>
+           Canvas not supported
+         </canvas>
+     
+         <script type = "text/javascript">
+
+var canvas = document.getElementById('canvas'),
+    context = canvas.getContext('2d'),
+    snapshotButton = document.getElementById('snapshotButton'),
+    snapshotImageElement = document.getElementById('snapshotImageElement'),
+    FONT_HEIGHT = 15,
+    MARGIN = 35,
+    HAND_TRUNCATION = canvas.width/25,
+    HOUR_HAND_TRUNCATION = canvas.width/10,
+    NUMERAL_SPACING = 20,
+    RADIUS = canvas.width/2 - MARGIN,
+    HAND_RADIUS = RADIUS + NUMERAL_SPACING,
+    loop;
+
+// Functions.....................................................
+
+function drawCircle() {
+   context.beginPath();
+   context.arc(canvas.width/2, canvas.height/2, RADIUS, 0, Math.PI*2, true);
+   context.stroke();
+}
+   
+function drawNumerals() {
+   var numerals = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ],
+       angle = 0,
+       numeralWidth = 0;
+
+   numerals.forEach(function(numeral) {
+      angle = Math.PI/6 * (numeral-3);
+      numeralWidth = context.measureText(numeral).width;
+      context.fillText(numeral, 
+         canvas.width/2  + Math.cos(angle)*(HAND_RADIUS) - numeralWidth/2,
+         canvas.height/2 + Math.sin(angle)*(HAND_RADIUS) + FONT_HEIGHT/3);
+   });
+}
+
+function drawCenter() {
+   context.beginPath();
+   context.arc(canvas.width/2, canvas.height/2, 5, 0, Math.PI*2, true);
+   context.fill();
+}
+
+function drawHand(loc, isHour) {
+   var angle = (Math.PI*2) * (loc/60) - Math.PI/2,
+       handRadius = isHour ? RADIUS-HAND_TRUNCATION-HOUR_HAND_TRUNCATION 
+                           : RADIUS-HAND_TRUNCATION;
+
+   context.moveTo(canvas.width/2, canvas.height/2);
+   context.lineTo(canvas.width/2  + Math.cos(angle)*handRadius, 
+                  canvas.height/2 + Math.sin(angle)*handRadius);
+   context.stroke();
+}
+
+function drawHands() {
+   var date = new Date,
+       hour = date.getHours();
+   hour = hour > 12 ? hour - 12 : hour;
+   drawHand(hour*5 + (date.getMinutes()/60)*5, true, 0.5);
+   drawHand(date.getMinutes(), false, 0.5);
+   drawHand(date.getSeconds(), false, 0.2);
+}
+
+function updateClockImage() {
+   dataUrl = canvas.toDataURL();
+   snapshotImageElement.src = dataUrl;
+}
+
+function drawClock() {
+   context.clearRect(0,0,canvas.width,canvas.height);
+
+   context.save();
+
+   context.fillStyle = 'rgba(255,255,255,0.8)';
+   context.fillRect(0, 0, canvas.width, canvas.height);
+
+   drawCircle();
+   drawCenter();
+   drawHands();
+
+   context.restore();
+
+   drawNumerals();
+
+   updateClockImage();
+}
+
+// Initialization................................................
+
+context.font = FONT_HEIGHT + 'px Arial';
+loop = setInterval(drawClock, 1000);
+         </script>
+       
+       
+</body>
+</html>

@@ -5,15 +5,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style/aboutus.css">
-        <script type="text/javascript">
-            var something;
-            function Ndrrimi_i_fotove(somenthing){
-                document.querySelector('.change').src=something;
-            }
-        </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     </head>
 
     <body>
+
+        <header>
+            <div class="navigation">
+                <a href="#" class="logo"><img src="images/Logo.png" alt="Logo"></a>
+                <i class="menu-toggle-btn fas fa-bars"></i>
+                <nav class="navigation-menu">
+                    <a href="#"><i class="fa-sharp fa-solid fa-house home"></i>Home</a>
+                    <a href="#"><i class="fa-sharp fa-solid fa-list about"></i>About us</a>
+                    <a href="#"><i class="fa-sharp fa-solid fa-layer-group activities"></i>Activities</a>
+                    <a href="#"><i class="fa-sharp fa-solid fa-headphones-simple contact"></i>Contact Us</a>
+                    <a class="search-box">
+                        <input class="search-txt" type="text" placeholder="search">
+                        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    </a>
+                    
+                </nav>
+    
+            </div>
+        </header>
 
         <!--Time and greeting part-->
         <div class="ferdeza">
@@ -25,10 +41,10 @@
             "43 PM"
             </time>
             <h1>
-            <span id="greeting">Good evening from OUR TEAM! Scroll down so you can learn more about us...
+            <span id="greeting">Good Evening from OUR TEAM! Scroll down so you can learn more about us...
             </span>
             </h1>
-            <script src="koha.js" type="text/javascript"></script>
+            <script src="aboutus.js" type="text/javascript"></script>
         </div>
 
         <!--Qoute, what our clinic offer and locations-->
@@ -37,8 +53,8 @@
             <div class="content">
                 <div class="textBox">
                     <div class="container_t">
-                        <h3>
-                           <q><i>A hero is an ordinary individual who finds the strength to persevere and endure in spite of overwhelming obstacles</i></q>
+                        <h3 class="text-uppercase mb-4 font-weight-bold text-info">
+                           <q style="text-decoration: underline;"><i>A hero is an ordinary individual who finds the strength to persevere and endure in spite of overwhelming obstacles</i></q>
                      </h3>
                     </div>
                      <p>
@@ -46,36 +62,18 @@
                     </p>
                 </div>
                 <div class="imgBox">
-                    <figure>
-                        <img src="future.jpg" class="change">
-                        <figcaption>
-                            <q style="font-size: 20px; color: black;">
-                           Pick one photo to see one of our location
-                            </q>
-                        </figcaption>
-                    </figure>
+                        <img src="future.jpg">
                 </div>
            </div>
-            <ul class="fotot">
-                <li>
-                    <img src="images/community.jfif" onclick="Ndrrimi_i_fotove('community.jfif')">
-                </li>
-                <li>
-                    <img src="images/hamilton.jpg" onclick="Ndrrimi_i_fotove('hamilton.jpg')">
-                </li>
-                <li>
-                    <img src="images/texas.jfif" onclick="Ndrrimi_i_fotove('texas.jfif')">
-                </li>
-            </ul>
         </section>
 
         <!--Home photos-->
-        <div class="fotoja"></div>
+        <div class="fotoja" style="background: url(homee.svg);"></div>
 
         <!--History of our clinic-->
-        <div class="about-section">
+        <div class="about-section" style="background-image:url(peoplee.jpeg);">
             <div class="inner-container">
-                <h1>About us</h1>
+                <h1 style="color: #09baba; background-color: aliceblue;text-align: center;">About Us</h1>
                 <p class="text">
                     "Launched in 2011, unique strategy has established it as the source of inspiration and influence throughout society. Our curatorial expertise and award-winning approach to storytelling is unparalleled. We work with exceptional talent and well-known and developing doctors, psychologists, speech therapists. In the following years, we have worked on a wide range of unique projects with some of the best Albanian psychologists. We strive to keep our work unique and clever." 
                 <br>
@@ -136,9 +134,119 @@
 <section class="benefits-section">
     <div class="benefits-div">
         <table class="benefits-table">
-            
+            <tbody>
+                <tr>
+                    <th colspan="3" style="color:#53505A;font-size: 25px;">Benefits of our rehabilitation</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="benefits">
+                            <h3 style="background: aliceblue;">Teaching</h3>
+                            <p>Improve the education of disabilities childrens and young people.</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="benefits">
+                            <h3 style="background: aliceblue;">
+                            Socializing</h3>
+                            <p>Enable individuals to reach their potential and engage in society.</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="benefits">
+                            <h3 style="background:aliceblue;">
+                            Support</h3>
+                            <p>Support and inform education professionals.</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </section>
+<!--Our focus is our clients-->
+<div class="client-text" style="font-family: 'Per-Clients';">OUR FOCUS IS OUR CLIENTS</div>
+<table class="ta2">
+    <tbody>
+        <tr></tr>
+        <tr>
+        <td style="border-right:3px solid;">
+        <img src="portfolio.png" alt="Bag Pic" style="width: 30px; height: 30px;">
+        <br>
+        <p style="color: black; font-size: 20px;">Staff</p>
+        <p style="font-size: 60px; color: black;font-weight: bold;font-family: 'Rajdhani'sans-serif;">56</p>
+    </td>
+    <td>
+        <img src="mouse.png" alt="Mouse Pic" style="width:40px; height:40px;">
+        <br>
+        <p style="color:black;font-size:20px">Working Days</p>
+        <p style="font-size: 60px; color: black;font-weight: bold;font-family: 'Rajdhani',sans-serif;">312</p>
+    </td>
+    <td>
+        <img src="customer.png" alt="Costumer Pic" style="width:40px; height:40px;">
+        <br>
+        <p style="color:black;font-size:20px">Costumers</p>
+        <p style="font-size: 60px; color: black;font-weight: bold;font-family: 'Rajdhani',sans-serif;">120</p>  
+    </td>
+    <td>
+        <img src="p.png" alt="Practice Pic" style="width:40px; height:40px;">
+        <br>
+        <p style="color:black;font-size:20px">Years Practical</p>
+        <p style="font-size: 60px; color: black;font-weight: bold;font-family: 'Rajdhani',sans-serif;">17</p>
+    </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<footer class="text-dark pt-2 pb-1">
+    <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-info">Contact us</h5>
+                <hr class="mb-2">
+                <p>
+                    <li class="fas fa-envelope mr-3"></li>23 Main, Street
+                </p>
+                <p>
+                    <li class="fas fa-home mr-3"></li>New Yourk, United States
+                </p>
+                <p>
+                    <a class="fas fa-phone mr-3 phone" href="tel:+91225467834">+91225467834</a>
+                </p>
+            </div>
+
+           
+            <hr class="mb-2">
+            <div class="row d-flex justufy-content-center">
+            <div>
+                <p>Copyright 2023 All Rights Reserved By:
+                    <a href="#" style="text-decoration: none;">
+                    <strong class="text-info">The Providers</strong>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="text-center">
+                <ul class="list-unstyled list-inline">
+                    <li class="list-inline-item">
+                        <a href="#" class="text-dark"><li class="fab fa-facebook"></li></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-dark"><li class="fab fa-twitter"></li></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-dark"><li class="fab fa-google-plus"></li></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-dark"><li class="fab fa-linkedin-in"></li></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
     </body>
 </html>
