@@ -1,0 +1,495 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 70px;
+    background: #d4e3f3;
+    position: fixed;
+    z-index: 99;
+}
+
+.navigation{
+    max-width: 100%;
+    padding-right: 20px;
+    margin:0;
+}
+
+.logo{
+    margin: 0;
+    float: left;
+    padding: 5px 0 0 5px;
+
+    
+}
+
+.logo img{
+    width: 70px;
+    position: relative;
+    padding: 10px;
+}
+
+.navigation-menu{
+    float:right;
+    display:flex;
+    align-items: center;
+    min-height: 70px;
+}
+
+.navigation-menu a{
+    margin-right: 40px;
+    color: blue;
+    text-transform: uppercase;
+    font-size:14px;
+    padding: 10px 0px;
+    border-radius: 4px;
+    transition: .3s linear;
+}
+
+.navigation-menu a:hover{
+    background: #fff;
+    color: blue;
+    transform: scale(0.8);
+}
+
+.navigation-menu i{
+    margin-left: 60px;
+    font-size: 16px;
+}
+
+.home{
+    color:#92ef84;
+
+}
+
+.about{
+    color:#92ef84;
+
+}
+
+.activities{
+    color:#92ef84;
+
+}
+
+.contact{
+    color:#92ef84;
+
+}
+
+.menu-toggle-btn{
+    float: right;
+    height: 90px;
+    line-height: 90px !important;
+    color: #fff;
+    font-size: 26px;
+    display: none !important;
+    cursor: pointer;
+}
+
+.search-box{
+    position: relative;
+    top: 5px;
+    left: 2rem;
+    right: 2rem;
+    background:none;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+.search-box:hover > .search-txt{
+    width: 4rem;
+    padding: 0 6px;
+    top: 50px;
+}
+.search-box:hover > .search-btn{
+   color: white;
+     }
+
+.search-txt{
+ border: none;
+ background: none;
+ outline: none;
+ float: left;
+ padding: 0;
+ color: rgb(66, 61, 139);
+ font-size: 16px;   
+ width: 0px;
+}
+ 
+@media screen and (max-width:760px) {
+    .menu-toggle-btn{
+        display: block !important;
+    }
+
+    .navigation-menu{
+        position:fixed;
+        width: 100%;
+        max-width: 400px;
+        background: #7c9bd1;
+        top:90px;
+        right: 0;
+        display: none;
+        padding: 20px 40px;
+        box-sizing: border-box;
+    }
+
+    .navigation-menu::before{
+        content: "";
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid red;
+        position: absolute;
+        top: -10px;
+        right: 10px;
+
+    }
+
+    .navigation-menu a{
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navigation-menu.active{
+        display: block;
+        position: fixed;
+    }
+
+}
+
+body{
+    background-image: url(
+    "https://i.pinimg.com/originals/63/65/fb/6365fb5823ca5602292b3d79a9202f11.jpg");
+    background-repeat:no-repeat;
+    background-position-x: center;
+
+}
+
+.bg-image{
+    width: 50cm;
+    height: 30cm;
+    background-image: url(
+"https://media.istockphoto.com/id/1244524439/photo/welfare-support-concept-caregiver-carer.jpg?s=612x612&w=0&k=20&c=8yjfo-zzawqv391umwAwq5InOMcHCqga1upprzy69fQ=");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+
+}
+.banner{
+    position:relative;
+    width: 100%;
+    margin:0 auto;
+      
+    }
+
+.container3{
+    box-sizing: border-box;
+    justify-content: center;
+
+    margin-bottom: 50px;
+    display: flex;
+    
+}
+
+.navbar{
+    display:flex;
+    justify-content: center;
+    margin: 5px;
+   
+}
+
+h2{
+    text-align:stars;
+    font-family: cursive;
+    margin-top: 50px;
+    font-size: 1cm;
+    padding-top: 5%;
+    margin-left: 20%;
+}
+.divider{
+    width: 44cm;
+    height: 5px;
+    background-color: #5699e0;
+    display:inline-block;
+    justify-content: right;
+    border-radius: 50%; 
+    position:relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%)
+ 
+   
+}
+nav ul li{
+    display:block;
+}
+nav ul li a{
+    font-size: 20px;
+}
+.popup-container{
+    /*background-color: #d4e3f3;*/
+    width: 600px;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3)
+}
+
+.textarea{
+    resize:none;
+    width: 100%;
+    height: 100px;
+    font-size: 18px;
+    font-family: sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px darkgray;
+}
+.counter-container{
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+.counter-conatiner p{
+    font-size: 18px;
+    color: gray;
+}
+.total-counter{
+    color: slateblue;
+}
+.remaining-counter{
+    color: orangered;
+}
+
+.container2{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.color-container2{
+    background-color: #dfedfb;
+    width: 230px;
+    height: 200px;
+    color-scheme: white;
+    margin: 5px 15px;
+    list-style-type: none;
+    display: flex;
+    font-size: 25px;
+    font-family: cursive;
+    margin-top: 100px;
+    box-sizing: border-box;
+    border: solid 2px darkgray;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    text-align:center;
+}
+
+table{
+    margin-top: 100px;
+    text-align: center;
+    border: 3px;
+    width: 20cm;
+    height: 5cm;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #5699e0;
+    background-color: #dfedfb;
+}
+
+h4{
+    font-size: 1.5cm;
+    color: #84add9;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+h3{
+    font-size: 1cm;
+    margin-top: 50px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h6{
+    font-size: 1.5cm;
+    color: #84add9;
+    margin-top: 100px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h1{
+    text-align: center;
+    font-size: 1.5cm;
+    color:rgb(119, 193, 168);
+    justify-content: center;
+    letter-spacing: 0.5rem;
+}
+.container4{
+    margin: 50px auto;
+    width: 50%;
+    padding: 8px;
+    font-size: 0.5cm;
+}
+
+.btn{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn .play{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #5699e0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 25px #f42e7966;
+    transition: 0.5s;
+}
+
+.btn.active .play{
+    box-shadow: 0 0 0 150vh #d4e3f3;
+}
+
+.btn .play::before{
+    content: '';
+    position: absolute;
+    border: 25px solid #fff ;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 0px solid transparent;
+    transform: translateX(5px);
+    justify-content: center;
+}
+
+.btn h3{
+    font-weight: 500;
+    font-size: 1em;
+    color: #d4e3f3;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+}
+
+.clip{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%) scale(0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: 0.5s;
+
+}
+.clip.active{
+    transition-delay: 0.5s;
+    transform: translate(-50% , -50%) scale(1);
+
+}
+.clip video{
+max-width: 900px;
+outline: none;
+border: 10px solid #fff;
+box-shadow: 0 15px 35px rgba(0,0,0,.3);
+}
+
+.clip .close{
+position: absolute;
+top: 30px;
+right: 30px;
+cursor: pointer;
+font-weight: 500;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: #fff;
+}
+/*make it responsive*/
+@media (max-width: 991px)
+{
+    .clip video
+    {
+        max-width: 90%;
+    }
+}
+
+
+/* Slideshow container */
+
+.maindiv{
+    width: 70%;
+    height: 400px;
+    margin-top: 250px;
+    margin-left: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    background-image: 
+url("https://media.istockphoto.com/id/984878838/photo/a-boy-in-wheelchair-with-teenager-friends-outside-playing-basketball.jpg?s=612x612&w=0&k=20&c=aL2zbVQVFXk6c5gBaEfGBROJUY5Qs_YUop57DMhCbRk=");
+   background-size: 100% 100%;
+   box-shadow: 1px 2px 10px 10px white;
+   animation: slider 10s infinite linear;
+}
+
+@keyframes slider{
+    0%{background-image: 
+url("https://media.istockphoto.com/id/1291655451/photo/sports-friendship.jpg?s=612x612&w=0&k=20&c=xbaZY3ej2H1TdojFoMj0EBQAIODaj3GH4F1JtGljRDg=");}
+   
+    35%{background-image: 
+url("https://img.freepik.com/free-photo/group-friends-taking-stroll-city-s-street-summer-day_155003-15177.jpg?w=2000");}
+    
+    75%{background-image: 
+url("https://raisingchildren.net.au/__data/assets/image/0013/108130/Physical-activity-for-children-with-disability-narrow.jpg");}
+}
+
+
+
+footer{
+    background-color: #f3eee7;
+    cursor: pointer;
+}
+
+.phone{
+    color: black;
+    letter-spacing: 2px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.name{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+
+
+
+
+
